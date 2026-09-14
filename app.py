@@ -32,4 +32,5 @@ def home():
 
 
 if __name__ == "__main__":
+    # Docker and GitHub Actions test
     app.run(host="0.0.0.0", port=5000)
