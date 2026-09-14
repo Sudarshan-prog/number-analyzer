@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Number Analyzer</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Number Analyzer</h1>
+
+        <p>Enter a number to analyze it.</p>
+
+        <form method="POST">
+
+            <input
+                type="number"
+                name="number"
+                placeholder="Enter number"
+                required
+            >
+
+            <br>
+
+            <button type="submit">
+                Analyze
+            </button>
+
+        </form>
+
+        {% if result %}
+
+        <div class="result">
+
+            <h2>Results</h2>
+
+            <p>
+                <strong>Number:</strong>
+                {{ result.number }}
+            </p>
+
+            <p>
+                <strong>Even / Odd:</strong>
+                {{ result.even_odd }}
+            </p>
+
+            <p>
+                <strong>Prime:</strong>
+                {{ result.prime }}
+            </p>
+
+            <p>
+                <strong>Digit Sum:</strong>
+                {{ result.digit_sum }}
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
